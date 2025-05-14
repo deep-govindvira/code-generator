@@ -2,6 +2,15 @@
 
 This project is a **C++ program** that helps backend developers quickly scaffold required files for a new entity (like `Todo`) when working with Java Spring Boot and AWS DynamoDB. It reduces the repetitive work of creating configuration files, Java model/controller classes, and YAML configurations.
 
+## 🧭 Quick Start
+
+```bash
+git clone https://github.com/deep-govindvira/code-generator
+cd code-generator
+chmod +x run.sh
+./run.sh
+```
+
 ## 📦 Generated Files
 
 After taking input from the user, the following files are automatically generated:
