@@ -1,0 +1,33 @@
+<!-- GGGGGGGGGG plugin -->
+<plugin>
+  <groupId>org.openapitools</groupId>
+  <artifactId>openapi-generator-maven-plugin</artifactId>
+  <version>7.2.0</version>
+  <executions>
+    <execution>
+      <id>GGGGGGGGGG-api</id>
+      <goals>
+        <goal>generate</goal>
+      </goals>
+      <configuration>
+        <inputSpec>${project.basedir}/src/main/resources/GGGGGGGGGG-api.yaml</inputSpec>
+        <generatorName>spring</generatorName>
+        <configOptions>
+          <modelPackage>${project.groupId}.GGGGGGGGGG.oas.model</modelPackage>
+          <apiPackage>${project.groupId}.GGGGGGGGGG.oas.api</apiPackage>
+          <useJakartaEe>true</useJakartaEe>
+          <interfaceOnly>true</interfaceOnly>
+          <useSpringController>true</useSpringController>
+          <useSpringBoot3>true</useSpringBoot3>
+          <delegatePattern>true</delegatePattern>
+          <additionalModelTypeAnnotations>
+            @lombok.Builder
+            @lombok.NoArgsConstructor
+            @lombok.AllArgsConstructor
+            @lombok.ToString
+          </additionalModelTypeAnnotations>
+        </configOptions>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>

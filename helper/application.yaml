@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /api
+
+dynamodb:
+  endpoint: http://localhost:8000
+  region: us-west-2
+  id: local
+  password: local
