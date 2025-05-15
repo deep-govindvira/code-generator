@@ -1,0 +1,17 @@
+Get all:
+http://localhost:8080/api/lllllllllls
+
+Get (pagination):
+http://localhost:8080/api/lllllllllls?page=1&limit=3
+
+Get By Id:
+http://localhost:8080/api/lllllllllls/write_id_here
+
+Post:
+http://localhost:8080/api/lllllllllls
+
+Put:
+http://localhost:8080/api/lllllllllls/write_id_here
+
+Delete:
+http://localhost:8080/api/lllllllllls/write_id_here

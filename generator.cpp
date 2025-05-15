@@ -149,11 +149,29 @@ void generateEntity() {
     output << "}";
 }
 
-void generateJSON() {
-    string contents = "{";
+void generateApplicationYaml() {
+    ifstream input(helper + "/application.yaml");
 
-    ofstream output(use + "/" + given + ".json");
-    output << contents << "\n";
+    stringstream buffer;
+    buffer << input.rdbuf(); 
+
+    string contents = buffer.str();
+
+    ofstream output(use + "/application.yaml");
+    output << contents;
+}
+
+void generatePostmanAPIS() {
+    ifstream input(helper + "/postman.txt");
+
+    stringstream buffer;
+    buffer << input.rdbuf(); 
+
+    string contents = buffer.str();
+    contents = replacePlaceholders(contents, "llllllllll", lower);
+
+    ofstream output(use + "/postman.txt");
+    output << contents << "\n\n{\n";
 
     int count = 0;
 
@@ -166,18 +184,6 @@ void generateJSON() {
     }
 
     output << "}";
-}
-
-void generateApplicationYaml() {
-    ifstream input(helper + "/application.yaml");
-
-    stringstream buffer;
-    buffer << input.rdbuf(); 
-
-    string contents = buffer.str();
-
-    ofstream output(use + "/application.yaml");
-    output << contents;
 }
 
 int main() {
@@ -211,8 +217,8 @@ int main() {
     generateDynamoDBConfig();
     generateController();
     generateEntity();
-    generateJSON();
     generateApplicationYaml();
+    generatePostmanAPIS();
 
     return 0;
 }
